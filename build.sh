@@ -46,6 +46,7 @@ build_libzmq() {
     fi
 
     pushd $OUTPUT_DIR/libzmq-ios
+    git checkout libzmq.rb
     git apply ../../patches/libzmq.rb.patch
     ./libzmq.rb
     popd
@@ -326,6 +327,7 @@ build_vcx_framework() {
 
 apply_vcx_wrapper_ios_patch() {
     pushd $INDY_SDK_DIR
+    git checkout vcx
     git apply ../../patches/vcx-wrapper-ios.patch
     popd
 }
